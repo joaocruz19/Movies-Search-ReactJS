@@ -1,0 +1,13 @@
+.input-search {
+    border: none;
+    width: 500px;
+    border-radius: 25px;
+}
+
+.input-search:hover {
+    background-color: #fffffff5;
+}
+
+.btn-search {
+    border-radius: 50px;
+}

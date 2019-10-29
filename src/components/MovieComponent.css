@@ -1,0 +1,21 @@
+.movie-container {
+    height: 300px;
+    width: 300px;
+    background-color: #292929;
+    overflow-y: scroll;
+    transition: all .2s ease-in-out;
+}
+
+.movie-container:hover {
+    transform: scale(1.1);
+}
+
+.movie-container::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+}
+
+.movie-container::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 50px;
+}
