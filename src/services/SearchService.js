@@ -8,6 +8,11 @@ class SearchService {
         const searchUrl = `${mainUrl}search/movie?api_key=${API_KEY}&query=${movie}`;
         return axios.get(searchUrl).then(resp => resp.data);
     }
+
+    async getMovie(id) {
+        const getUrl = `/movie/${id}?api_key=${API_KEY}`;
+        return axios.get(getUrl).then(resp => resp.data);
+    }
 }
 
 export default SearchService;
