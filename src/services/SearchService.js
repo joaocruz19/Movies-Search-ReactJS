@@ -10,9 +10,11 @@ class SearchService {
     }
 
     async getMovie(id) {
-        const getUrl = `/movie/${id}?api_key=${API_KEY}`;
+        const getUrl = `${mainUrl}movie/${id}?api_key=${API_KEY}`;
         return axios.get(getUrl).then(resp => resp.data);
     }
 }
 
 export default SearchService;
+
+

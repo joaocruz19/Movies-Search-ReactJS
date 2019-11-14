@@ -10,6 +10,7 @@ class SearchForm extends Component {
         this.SearchService = new SearchService();
         this.updateQuery = this.updateQuery.bind(this);
         this.searchMovie = this.searchMovie.bind(this);
+        this.key = 0;
     }
 
     updateQuery(event) {
@@ -23,13 +24,8 @@ class SearchForm extends Component {
     }
 
     renderMovies() {
-        if (this.state.result === null) {
-            return;
-        } else if (this.state.result.results.lenght === 0){
-            return `Ops<br>Looks like we couldn't find this movie`;
-        }
         const results = this.state.result.results;
-        return results.map(result => <MovieComponent movieInfo={result} />);
+        return results.map(result => <MovieComponent movieInfo={result} key={this.key++} />);
     }
 
     render() {
@@ -40,9 +36,13 @@ class SearchForm extends Component {
                     <input type="text" placeholder="Search a Movie..."
                         onChange={this.updateQuery} className="mx-2 form-control input-search shadow-none" />
                     <button onClick={this.searchMovie}
-                        className="btn btn-search btn-danger shadow-none"><i className="fa fa-search"></i></button>
+                        className="btn btn-search btn-danger shadow-none">
+                        <i className="fa fa-search"></i>
+                    </button>
                 </div>
-                <div className="d-flex justify-content-around flex-wrap">{this.renderMovies()}</div>
+                <div className="d-flex justify-content-around flex-wrap">
+                    {this.state.result === null ? null : this.renderMovies()}
+                </div>
             </div>
         )
     }
