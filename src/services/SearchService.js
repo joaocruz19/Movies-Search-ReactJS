@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const mainUrl =  'https://api.themoviedb.org/3/';
-const API_KEY = '343fc92fc78f017227b1826aa1a587b2';
+const API_KEY = '<YOUR-API-KEY-HERE>';
 
 class SearchService {
     async searchMovie(movie) {
