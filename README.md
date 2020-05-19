@@ -13,4 +13,4 @@ $ mv .example.env .env
 ```
 
 Now open the .env file and replace the "your_api_key_here" by your API key.  
-You can get a API key by [creating a account on The Movie Database](https://www.themoviedb.org/account/signup) and then requesting it at [your settings page](https://www.themoviedb.org/settings/api).
+You can get a API key by [creating an account on The Movie Database](https://www.themoviedb.org/account/signup) and then requesting it at [your settings page](https://www.themoviedb.org/settings/api).
