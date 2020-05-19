@@ -2,9 +2,9 @@ import React from 'react';
 import './Modal.css';
 
 function Modal(props) {
-    	const displayClass = props.shouldShow ? 'd-flex' : 'd-none';
+    const displayClass = props.shouldShow ? 'd-flex' : 'd-none';
 		const closeModal = props.closeModal;
-        const movieInfo = props.movieInfo;
+    const movieInfo = props.movieInfo;
 
     return (
         <div className={displayClass} id="modal">
@@ -16,7 +16,7 @@ function Modal(props) {
                    <p>{movieInfo.overview}</p>
            	 </div>
        	</div>
-    )			
+    )
 }
 
 export default Modal;
