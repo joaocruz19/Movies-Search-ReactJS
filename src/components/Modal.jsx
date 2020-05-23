@@ -3,7 +3,7 @@ import './Modal.css';
 
 function Modal(props) {
     const displayClass = props.shouldShow ? 'd-flex' : 'd-none';
-		const closeModal = props.closeModal;
+	const closeModal = props.closeModal;
     const movieInfo = props.movieInfo;
 
     return (

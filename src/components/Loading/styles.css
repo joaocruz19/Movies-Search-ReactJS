@@ -1,0 +1,14 @@
+.loading {
+    animation: spin 1s linear infinite;
+    border: 10px solid #fff;
+    border-radius: 50%;
+    border-top: 10px solid #ff2121;
+    height: 70px;
+    margin: 15px 0px;
+    width: 70px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
