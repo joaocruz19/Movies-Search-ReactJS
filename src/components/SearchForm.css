@@ -8,20 +8,7 @@
     background-color: #fffffff5;
 }
 
-.submit-wrapper {
-    position: relative;
-    height: 40px;
-    width: 40px;
-}
-
 .btn-search {
     border-radius: 50px;
-    height: 100%;
-    width: 100%;
-}
-
-.submit-wrapper i {
-    position: absolute;
-    right: 12px;
-    top: 10px;
+    font-family: FontAwesome;
 }
