@@ -18,30 +18,43 @@ class SearchForm extends Component {
         this.setState({ query: newQuery });
     }
 
-    searchMovie() {
+    searchMovie(e) {
+        e.preventDefault();
         const movieTitle = this.state.query;
-        this.SearchService.searchMovie(movieTitle).then(response => this.setState({ result: response }));
+        this.SearchService.searchMovie(movieTitle)
+            .then(res => this.setState({ result: res.data }));
     }
 
     renderMovies() {
-        const results = this.state.result.results;
-        return results.map(result => <MovieComponent movieInfo={result} key={this.key++} />);
+        const { result } = this.state;
+        if (result.success === false) {
+            return (
+                <div className="alert alert-danger" role="alert">
+                    {result.status_message}
+                </div>
+          );
+        }
+
+        const { results } = result;
+        return results.map(result => 
+            <MovieComponent movieInfo={result} key={this.key++} />
+        );
     }
 
     render() {
         return (
             <div className="d-flex flex-column justify-content-start align-items-center">
                 <h2 className="mb-5">Search for a movie using this amazing React App!!</h2>
-                <div className="form-group d-flex">
+                <form className="form-group d-flex" onSubmit={this.searchMovie}>
                     <input type="text" placeholder="Search a Movie..."
                         onChange={this.updateQuery} className="mx-2 form-control input-search shadow-none" />
-                    <button onClick={this.searchMovie}
-                        className="btn btn-search btn-danger shadow-none">
+                    <div className="submit-wrapper">
+                        <input type="submit" value="" className="btn btn-search btn-danger shadow-none"/>
                         <i className="fa fa-search"></i>
-                    </button>
-                </div>
+                    </div>
+                </form>
                 <div className="d-flex justify-content-around flex-wrap">
-                    {this.state.result === null ? null : this.renderMovies()}
+                    {this.state.result && this.renderMovies()}
                 </div>
             </div>
         )

@@ -8,8 +8,8 @@ $ cd Movies-Search-ReactJS
 
 $ npm install
 
-# rename the .example.env file
-$ mv .example.env .env
+# make a copy of .example.env to a .env file
+$ cp .example.env .env
 ```
 
 Now open the .env file and replace the "your_api_key_here" by your API key.  
