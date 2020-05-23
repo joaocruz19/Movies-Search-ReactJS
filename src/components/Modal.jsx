@@ -9,7 +9,7 @@ function Modal(props) {
     return (
         <div className={displayClass} id="modal">
             <div className=" p-3" id="modal-content">
-               	<button onClick={closeModal} className="close-btn">
+               	<button onClick={() => closeModal(false)} className="close-btn">
                    	<i className="fa fa-times"></i>
                	</button>
                    <h1>{movieInfo.title}</h1>

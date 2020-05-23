@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
 import SearchService from "../../services/SearchService";
-import MovieComponent from '../MovieComponent';
+import MovieComponent from '../MovieComponent/';
 import Loading from '../Loading';
 
 function SearchForm() {
@@ -15,6 +15,7 @@ function SearchForm() {
         if (query) {
             searchMovie();
         }
+    // eslint-disable-next-line
     }, [query]);
 
     function searchMovie() {
@@ -37,10 +38,10 @@ function SearchForm() {
         const { results } = result;
         return (
             <>
-                <p className="align-self-start">
+                <p className="align-self-start my-3">
                     Showing {results.length} results for <strong>"{query}"</strong>
                 </p>
-                <div className="d-flex justify-content-around flex-wrap">
+                <div className="d-flex justify-content-start flex-column movies-list">
                     {
                         results.map(result =>
                             <MovieComponent movieInfo={result} key={result.id} />
@@ -52,7 +53,7 @@ function SearchForm() {
     };
 
     return (
-        <div className="d-flex flex-column justify-content-start align-items-center">
+        <div className="d-flex flex-column justify-content-center align-items-center search-form">
             <h2 className="mb-5">Search for a movie using this amazing React App!!</h2>
             <form className="form-group d-flex" onSubmit={e => {e.preventDefault(); setQuery(searchInput)}}>
                 <input type="text" placeholder="Search a Movie..."

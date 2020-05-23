@@ -16,3 +16,12 @@
 strong {
     text-transform: capitalize;
 }
+
+.movies-list {
+    width: 100%;
+}
+
+.search-form {
+    width: 80%;
+    max-width: 1000px;
+}
