@@ -47,8 +47,25 @@
 
 .movie-info p {
     display: -webkit-box;
-    -webkit-line-clamp: 4; /** número de linhas que você quer exibir */
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.stars-score {
+    font-weight: bold;
+}
+
+.stars-score span {
+    margin: 2px;
+}
+
+.stars-score i {
+    color: #ffd000;
+    margin: 0 2px;
+}
+
+.star-off {
+    color: rgb(148, 148, 148) !important;
 }
